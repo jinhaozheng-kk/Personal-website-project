@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(pnpm -v)",
+      "PowerShell(pnpm *)",
+      "Bash(pnpm build *)",
+      "Bash(pnpm dev *)",
+      "Bash(curl -sS -o /tmp/page.html -w \"HTTP %{http_code} | bytes=%{size_download}\\\\n\" http://localhost:3000/)",
+      "Read(//tmp/**)",
+      "Bash(curl -sS -o /tmp/page.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(pnpm lint *)",
+      "Bash(pnpm exec *)",
+      "Bash(cmd *)",
+      "Bash(node node_modules/typescript/bin/tsc --noEmit)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
