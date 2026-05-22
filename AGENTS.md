@@ -48,7 +48,7 @@ pnpm lint         # next lint(eslint flat config:next/core-web-vitals + next/typ
 
 `HeroSection` 实现了一套自定义的指针交互,在改动前请先理解:
 
-- 黑色 "agent ball" 默认停在右下角;左键单击 Hero 区会 **唤醒** 它,右键单击让它 **睡觉**。
+- 黑色 "agent ball" 默认停在右下角;左键单击 Hero 区会 **唤醒** 它,右键单击或鼠标移出 Hero 区让它 **睡觉**(spring 回 idle 锚点 + 重新浮动)。
 - 唤醒后,黑球以弹簧动效跟随光标,标题获得 3D 倾斜(倾斜由 `mxLive`/`myLive` 这两个 **原始** motion value 驱动,不是经过 spring 平滑过的 —— 保证倾斜对光标零延迟),同时英文标题上叠加一个径向 CSS mask,在黑球附近露出中文标题(`你好,我是锦浩`)。
 - 整个交互通过 `(pointer: fine)` 媒体查询保护 —— 触屏设备完全跳过这套逻辑。
 - `awakeRef` / `insideRef` 镜像对应的 React 状态,目的是避免指针事件回调里的闭包陷阱。

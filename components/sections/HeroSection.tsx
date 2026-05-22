@@ -167,6 +167,12 @@ export function HeroSection() {
       // Spring on targetX/Y carries the ball smoothly back to its idle anchor.
       targetX.set(idleX.get());
       targetY.set(idleY.get());
+      // Leaving the hero is treated as disengagement: drop the awake state so
+      // the ball resumes floating at idle and the title reveal/mask clear.
+      if (awakeRef.current) {
+        setAwake(false);
+        awakeRef.current = false;
+      }
     };
 
     const onEnter = () => {
