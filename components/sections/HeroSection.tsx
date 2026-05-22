@@ -146,15 +146,16 @@ export function HeroSection() {
       targetY.set(iy);
     };
 
-    // Tracked on document (not the hero) so the ball follows the cursor
-    // vertically past the hero; intensity is still gated by hero enter/leave.
+    // Tracked on document so we always know the cursor position for re-entry,
+    // but the ball only chases the cursor while inside the hero — once the
+    // cursor leaves, the spring on targetX/Y carries it back to the idle pos.
     const onMove = (e: PointerEvent) => {
       const r = el.getBoundingClientRect();
       const x = e.clientX - r.left;
       const y = e.clientY - r.top;
       mxLive.set(x);
       myLive.set(y);
-      if (awakeRef.current) {
+      if (awakeRef.current && insideRef.current) {
         targetX.set(x);
         targetY.set(y);
       }
@@ -163,6 +164,9 @@ export function HeroSection() {
     const onLeave = () => {
       insideRef.current = false;
       intensity.set(0);
+      // Spring on targetX/Y carries the ball smoothly back to its idle anchor.
+      targetX.set(idleX.get());
+      targetY.set(idleY.get());
     };
 
     const onEnter = () => {
