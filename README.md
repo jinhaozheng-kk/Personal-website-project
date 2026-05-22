@@ -1,6 +1,6 @@
 # Hao — 个人介绍网站
 
-黑白极简风格的单页个人网站。Next.js 15 + React 19 + Tailwind CSS v4 + Framer Motion。
+黑白极简风格的单页个人网站。Next.js 16 + React 19 + Tailwind CSS v4 + Framer Motion。
 
 ## 本地开发
 
@@ -41,7 +41,7 @@ app/                  # 路由(单页)
 components/
   layout/             # Header / Footer
   sections/           # Hero / Skills / Projects / Cooperation / Contact
-  ui/                 # 视觉组件(Pattern 背景 / Text Generate / Hover / Number Ticker / Bento / Border Beam / Dotted Glow)
+  ui/                 # 视觉组件(Pattern 背景 / Text Generate / Flip / Tilt / Number Ticker / Bento / Border Beam / Dotted Glow)
   visual/             # AgentCircle 自定义
 data/profile.ts       # 单一数据源
 lib/utils.ts          # cn() 工具
@@ -49,7 +49,7 @@ lib/utils.ts          # cn() 工具
 
 ## 技术栈
 
-- **框架**: Next.js 15 (App Router) + React 19 + TypeScript
+- **框架**: Next.js 16 (App Router) + React 19 + TypeScript
 - **样式**: Tailwind CSS v4(配置写在 `app/globals.css` 的 `@theme`)
 - **动画**: Framer Motion(`motion` 包)
 - **图标**: lucide-react

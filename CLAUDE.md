@@ -18,7 +18,7 @@ pnpm lint         # next lint(eslint flat config:next/core-web-vitals + next/typ
 
 ## 架构概览
 
-这是一个 **单页** 个人介绍网站(Next.js 15 App Router)。`app/page.tsx` 是唯一路由,按顺序拼装五个 Section:`HeroSection` → `SkillsSection` → `ProjectsSection` → `CooperationSection` → `ContactSection`。`<Header>` 与 `<Footer>` 在 `app/layout.tsx` 中包裹整页。
+这是一个 **单页** 个人介绍网站(Next.js 16 App Router)。`app/page.tsx` 是唯一路由,按顺序拼装五个 Section:`HeroSection` → `SkillsSection` → `ProjectsSection` → `CooperationSection` → `ContactSection`。`<Header>` 与 `<Footer>` 在 `app/layout.tsx` 中包裹整页。
 
 ### 唯一的内容数据源:`data/profile.ts`
 
@@ -37,7 +37,7 @@ pnpm lint         # next lint(eslint flat config:next/core-web-vitals + next/typ
 ### 组件分层
 
 - `components/sections/*` —— 页面 Section,各自负责自己的布局与动画编排。`SectionHeader.tsx` 是共享的 eyebrow / 标题 / 描述区块。
-- `components/ui/*` —— 可复用的视觉原语(`PatternBackground`、`TextGenerateEffect`、`FlipCard`、`TiltCard`、`NumberTicker`、`BentoGrid`/`BentoCard`、`BorderBeam`、`DottedGlow`、`card-hover-effect`)。多数借鉴 Aceternity / Magic UI 风格,均为自包含的 client component。
+- `components/ui/*` —— 可复用的视觉原语(`PatternBackground`、`TextGenerateEffect`、`FlipCard`、`TiltCard`、`NumberTicker`、`BentoGrid`/`BentoCard`、`BorderBeam`、`DottedGlow`)。多数借鉴 Aceternity / Magic UI 风格,均为自包含的 client component。
 - `components/visual/AgentCircle.tsx` —— Hero 里的悬浮黑球视觉。
 - `components/layout/{Header,Footer}.tsx`。
 - `lib/utils.ts` —— `cn()`(clsx + tailwind-merge)。任何条件类名组合都用它。
